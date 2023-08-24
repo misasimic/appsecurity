@@ -1,0 +1,12 @@
+{
+    "name": "keyvalut",
+    "version": "1.0.0",
+    "description": "",
+    "dependencies": {
+        "@azure/keyvault-secrets": "^4.7.0",
+        "@azure/identity": "^3.3.0"        
+    },
+    "serviceMeta": {
+        "azure_services": ["keyvault"]
+    }
+}

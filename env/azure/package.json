@@ -1,0 +1,27 @@
+{
+  "name": "aws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/arm-apimanagement": "^9.0.0",
+    "@azure/arm-appservice": "^14.0.0",
+    "@azure/arm-keyvault": "^3.0.0",
+    "@azure/arm-resources": "^5.2.0",
+    "@azure/arm-storage": "^18.1.0",
+    "@azure/arm-subscriptions": "^5.1.0",
+    "@azure/identity": "^3.3.0",
+    "axios": "^1.4.0",
+    "fs-extra": "^11.1.1",
+    "gulp": "^4.0.2",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-rename": "^2.0.0",
+    "handlebars": "^4.7.8",
+    "lodash": "^4.17.21"
+  }
+}

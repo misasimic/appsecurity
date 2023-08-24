@@ -1,0 +1,131 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .login-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+      .login-container h1 {
+        margin-bottom: 20px;
+      }
+      .login-input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .login-button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .login-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Reset Password</h1>
+      <form id="login-form">
+        <input
+          class="login-input"
+          type="email"
+          name="email"
+          placeholder="Username"
+          required
+          value="1111email1111"
+        />
+        <input
+          class="login-input"
+          type="password"
+          name="pwd"
+          placeholder="Password"
+          required
+        />
+        <button class="login-button" type="button" onclick="submitForm()">
+          Reset
+        </button>
+      </form>
+    </div>
+
+    <script>
+            function getUrl(url) {
+              if (
+                location.host.slice(location.host.indexOf(".")) ===
+                ".azurewebsites.net"
+              )
+                url = "/api/main" + url;
+              return url;
+            }
+            function redirect(url) {
+              url = getUrl(url);
+              location.href = url;
+            }
+
+            async function submitForm() {
+              const form = document.getElementById("login-form");
+
+              if (form.reportValidity()) {
+                const urlString = window.location.href;
+                const url = new URL(urlString);
+                const searchParams = url.searchParams;
+                const formData = {
+                  email: form.email.value,
+                  pwd: form.pwd.value,
+                  token:searchParams.get('token')
+                };
+
+                try {
+                  const response = await fetch("", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                  });
+
+
+
+                  if (response.ok) {
+                    const responseData = await response.json();
+                    if (responseData.success) {
+                      redirect("/login");
+                    }
+                    else {
+                      const msg = document.getElementById("message");
+                      msg.style.display = "block"
+                      msg.innerHTML = responseData.msg;
+                    }
+                  } else {
+                    console.error("Error:", response.statusText);
+                  }
+                } catch (error) {
+                  console.error("An error occurred:", error);
+                }
+              }
+            }
+    </script>
+  </body>
+</html>

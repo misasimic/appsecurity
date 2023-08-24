@@ -1,0 +1,5 @@
+{
+    "kind": "function",
+    "api": {"route": "/"},
+    "cloud_client_services": ["keyValueStorage", "notification"]
+}

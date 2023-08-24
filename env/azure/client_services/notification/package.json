@@ -1,0 +1,17 @@
+{
+    "name": "hello",
+    "version": "1.0.1",
+    "description": "",
+    "dependencies": {
+        "@sendgrid/mail": "^7.7.0"
+    },
+    "serviceMeta": {
+        "cloud_client_services": ["secrets"],
+        "secrets": {
+            "SENDGRID": {
+                "key": "key from SendGrid Portal",
+                "sender": "registered sender email on SendGrid Portal"
+            }
+        }
+    }
+}

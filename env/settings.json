@@ -1,0 +1,11 @@
+{
+    "provider": "azure",
+    "azure": {
+        "client" : {
+            "keyValueStorage": "storageTable",
+            "secrets": "keyvault",
+            "notification": "notification"
+        },
+        "cloudServices": ["keyvault"]
+    }
+}
