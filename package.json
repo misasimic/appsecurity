@@ -4,6 +4,7 @@
   "description": "UploadFunctionSlot(\"test\"); (test is new Code) Swap(live, test); //test is prevLive, Live is new Code Swap(test, prev); //prev is prevLive, test is prevPrevLive UploadFunctionSlot(\"test\"); test is newCode",
   "main": "index.js",
   "scripts": {
+    "start": "node env/localhost/http_server.js",
     "test": "jest",
     "deploy": "node deploy.js"
   },

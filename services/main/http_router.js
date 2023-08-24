@@ -26,7 +26,7 @@ async function process_http_req (req) {
             req
         }
         res = {
-            headers:{
+            headers: {
                 'content-type': 'application/json'
             },
             body: customStringify(t)

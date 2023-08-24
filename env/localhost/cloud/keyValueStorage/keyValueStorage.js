@@ -14,7 +14,10 @@ async function saveEntity (entity) {
     db[collection] = db[collection] || {}
     db[collection][entity.data[key]] = entity.data
     fs.writeFile(dbFile, JSON.stringify(db), () => {})
-    return entity.data
+    return {
+        success: true,
+        data: entity.data
+    }
 }
 
 function prepareRecord (entity) {
