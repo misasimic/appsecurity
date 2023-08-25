@@ -19,4 +19,6 @@ The login page provides options for both signing up and recovering a forgotten p
 
 ## Architectural insights
 
-* [Architecture](./documentation/1-Architecture.md)
+* [Architecture - General Guide](./documentation/1-Architecture.md)
+
+* [Demo App Architecture](./documentation/1-Architecture.md)

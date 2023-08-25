@@ -1,7 +1,8 @@
+[home](../README.md)
 # DEMO App Architecture
 <img src="app-composition.jpeg" alt="Image Alt Text" width="600" height="400">
 
-Drawing from the insights presented in the "General Guide: Architectural Insights," the DEMO app is thoughtfully designed as an environment-agnostic service. While currently anchored by a central core component, the Main Service, the architecture is primed for future expansion. This flexibility allows for the seamless integration of additional components as the app's functionality evolves.
+Drawing from the insights presented in the ["General Guide: Architectural Insights"](./1-Architecture.md) the DEMO app is thoughtfully designed as an environment-agnostic service. While currently anchored by a central core component, the Main Service, the architecture is primed for future expansion. This flexibility allows for the seamless integration of additional components as the app's functionality evolves.
 
 Harnessing the power of environment-specific settings, our deployment process orchestrates the generation and assembly of environment-specific code. Although the current iteration of the code seamlessly adapts to both localhost and Azure environments, the underlying approach lays the foundation for embracing a broader array of environments in the times ahead.
 
@@ -20,5 +21,6 @@ It's worth noting that the [Live Demo Link](https://a488secureappdemofnappmain.a
 
 <img src="localhost.jpeg" alt="Image Alt Text" width="1000" height="300">
 
+<br/>
 
 It's worth noting that in the localhost case and Azure case, the Secrets Services and DB Services differ. Azure leverages Key Vault for secrets and uses Storage Table for the database. Conversely, in the localhost environment, environment variables and a local JSON file are employed for secrets and the database, respectively. Importantly, the actual code in our main component service remains the same. The magic of differentiation is orchestrated by the environment-specific code, which is both adaptable and easily adjustable for each environment.
