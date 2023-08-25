@@ -21,6 +21,7 @@ In essence, the architectural decisions we make today serve as a buffer against 
 - **Efficient Adaptation:** Software architecture aligns with "cost of change" principle, enabling agile adjustments without system-wide disruption.
 
 - **Seamless Development:** CI/CD methods enable frictionless integration and deployment, streamlining development.
+- **Loose Coupling - High Cohesion:** Embrace the principles of loose coupling and high cohesion to enhance maintainability. Utilize the Dependency Injection principle/design pattern for loose coupling, enabling components to function independently while being seamlessly integrated. Ensuring high cohesion within components further contributes to focused and organized functionality.
 - **Effective Coding Patterns:** Embrace SRP, KISS, and DRY principles for focused, efficient, and clean code.
 - **Enhanced Data Management:** Repository Pattern optimizes data handling, while Factory design enhances object creation.
 - **Performance Optimization:** Caching and Singleton patterns reduce redundancy and ensure efficient component use.
