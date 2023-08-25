@@ -13,3 +13,6 @@ After deploying to the Azure environment, the architecture will resemble the fol
 <img src="demoapp-azure.jpeg" alt="Image Alt Text" width="800" height="400">
 
 In this specific scenario, placing an API Gateway in front of a single Function might not seem necessary. However, its presence serves as a demonstration and emphasizes that the architecture can accommodate multiple Function services in our solution. This setup demonstrates the app's readiness for such changes. Furthermore, removing the API Gateway component during the build process would be a straightforward adjustment.
+
+## localhost
+
