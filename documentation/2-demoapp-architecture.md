@@ -1,5 +1,5 @@
 # DEMO App Architecture
-![App Architecture](app-composition.jpeg)
+<img src="app-composition.jpeg" alt="Image Alt Text" width="600" height="400">
 
 Drawing from the insights presented in the "General Guide: Architectural Insights," the DEMO app is thoughtfully designed as an environment-agnostic service. While currently anchored by a central core component, the Main Service, the architecture is primed for future expansion. This flexibility allows for the seamless integration of additional components as the app's functionality evolves.
 
