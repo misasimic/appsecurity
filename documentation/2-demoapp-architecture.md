@@ -18,4 +18,7 @@ It's worth noting that the [Live Demo Link](https://a488secureappdemofnappmain.a
 
 ## localhost
 
-<img src="demoapp-azure.jpeg" alt="Image Alt Text" width="1000" height="300">
+<img src="localhost.jpeg" alt="Image Alt Text" width="1000" height="300">
+
+
+It's worth noting that in the localhost case and Azure case, the Secrets Services and DB Services differ. Azure leverages Key Vault for secrets and uses Storage Table for the database. Conversely, in the localhost environment, environment variables and a local JSON file are employed for secrets and the database, respectively. Importantly, the actual code in our main component service remains the same. The magic of differentiation is orchestrated by the environment-specific code, which is both adaptable and easily adjustable for each environment.
