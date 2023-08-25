@@ -133,3 +133,4 @@ build
 build-copy
 .vscode
 .DS_Store
+db.json
