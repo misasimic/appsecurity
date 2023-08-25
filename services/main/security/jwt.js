@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const secretKey = '8f2df57c-b2a8-4fae-b100-cc8f9d3fc3f5re'
 
 const options = {
-    expiresIn: '3d' // Token will expire in 1 hour
+    expiresIn: '3d' 
 }
 
 function generate_token (payload) {
