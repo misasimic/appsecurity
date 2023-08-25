@@ -1,4 +1,5 @@
 [home](../README.md)
+[installation](./3-installation.md)
 # DEMO App Architecture
 <img src="app-composition.jpeg" alt="Image Alt Text" width="600" height="400">
 
@@ -24,3 +25,21 @@ It's worth noting that the [Live Demo Link](https://a488secureappdemofnappmain.a
 <br/>
 
 It's worth noting that in the localhost case and Azure case, the Secrets Services and DB Services differ. Azure leverages Key Vault for secrets and uses Storage Table for the database. Conversely, in the localhost environment, environment variables and a local JSON file are employed for secrets and the database, respectively. Importantly, the actual code in our main component service remains the same. The magic of differentiation is orchestrated by the environment-specific code, which is both adaptable and easily adjustable for each environment.
+
+
+# Code Organization
+
+## Core/Domain Logic
+Our project's core services are organized within the `/services` folder. Each subfolder in this directory represents an independent service, which transforms into an Azure Function upon deployment. Currently, our primary service is named "main," encompassing the core application logic.
+
+The entry point for our service is `http_router.js`. This module takes an HTTP request as input and generates an HTTP response object. It serves as the orchestrator between the HTTP layer and the core application logic.
+
+Additionally, the `/routes` subfolder handles route registration. Depending on the incoming HTTP request, the corresponding route file is loaded, and each route executes its specific logic.
+
+In the context of the "main" service, all routes collaborate with the `../security/users.js` file, executing operations provided by this component. The Users component interfaces with `Users-repo.js` to store and retrieve data. The `users-repo` component determines the type of database to be used (e.g., KeyValueStore, SQL, Document). Ultimately, the users-repo interacts with the environment's concrete database for data storage and retrieval.
+
+Furthermore, the `/html` subfolder contains HTML files that certain routes can serve, responding to specific HTTP requests.
+
+## Environment-Specific Code
+
+The `/env` folder hosts code tailored to various environments. During the deployment process, this code constructs the necessary cloud environment structure and provisions resources for deploying the application code. In the case of the localhost environment, the core services' `http_router` module is directly utilized without any additional cloud-specific setup.

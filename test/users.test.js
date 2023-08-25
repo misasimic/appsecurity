@@ -14,7 +14,8 @@ let jwt
 
 describe('testing Users Service', () => {
     test('sign_up', async () => {
-        const sign_up = await users.sign_up(testUser)
+        const sign_up = (await users.sign_up(testUser)).data
+        console.log(sign_up)
         expect(sign_up.pwd).toBeUndefined()
         expect(sign_up.email === testUser.email).toBe(true)
     })
@@ -41,10 +42,10 @@ describe('testing Users Service', () => {
 
     test('reset_pwd', async () => {
         const token = users.getResetToken(testUser.email)
-        const resetPwdUser = await users.reset_pwd(token, {
+        const resetPwdUser = (await users.reset_pwd(token, {
             email: testUser.email,
             pwd: 'newPwd'
-        })
+        })).data
         expect(resetPwdUser.email === testUser.email).toBe(true)
         let resetPwdUserFail = {}
         try {

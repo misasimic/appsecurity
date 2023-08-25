@@ -1,3 +1,4 @@
+[home](../README.md)
 # Installation Instructions
 
 ## Prerequisites
@@ -31,7 +32,7 @@ These steps will set up and launch the app locally for testing and development.
      ```bash
      az login
      ```
-4. **Register Subscription Resource Providers**: Make sure that following resource providers are Registered:
+4. **Register Subscription Resource Providers (In Azure Portal)**: Make sure that following resource providers are Registered:
     - Microsoft.Web
     - Microsoft.KeyVault
     - Microsoft.Storage
@@ -43,6 +44,9 @@ These steps will set up and launch the app locally for testing and development.
 
 Once Azure settings are properly configured in the Azure Portal and the Azure CLI is installed and logged in, you're ready to initiate the deployment process.
 
+```bash
+node deploy.js
+```
 If this is the first deployment, the process will create all the necessary resources on Azure, including:
 - A Resource Group (all subsequent resources will be deployed within this group, making it easy to remove all used resources by simply deleting the group).
 - Storage Account
@@ -77,11 +81,11 @@ By using Azure Vault for storing sensitive information, you ensure a secure and 
 
 ### API Gateway (Azure API Management Services)
 
-As detailed in the DEMO App Architecture section, the deploy process can provision an Azure API Management Service. It's important to note that setting up the API Management Service can be time-consuming, ranging from 30 minutes to over an hour. However, it's essential to understand that this step is only necessary in environments where multiple functions are utilized. In cases where only one function is present, setting up the API Management Service might not be logical.
+As detailed in the [DEMO App Architecture](./2-demoapp-architecture.md) section, the deploy process can provision an Azure API Management Service. It's important to note that setting up the API Management Service can be time-consuming, ranging from 30 minutes to over an hour. However, it's essential to understand that this step is only necessary in environments where multiple functions are utilized. In cases where only one function is present, setting up the API Management Service might not be logical.
 
 To streamline the deployment process and exclude the provisioning of the API Gateway and registration of API endpoints, follow these steps:
 
-1. **Modify Function Configuration**:
+1. **Modify Function Build COde**:
    - Locate the `/env/azure/kinds/function/function.js` file within the app's codebase.
    - Comment out the line `api.registerService(in_meta)` by adding `//` at the beginning of the line.
 
