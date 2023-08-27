@@ -55,7 +55,7 @@ async function login_jwt (token) {
     const decoded = await jwt.decode(token)
 
     const user = await user_repo.get_user({
-        email: decoded.payload.email
+        email: decoded.payload?.email
     })
 
     const result = {

@@ -30,5 +30,9 @@ The login page provides options for both signing up and recovering a forgotten p
 
 Upon successfully following the Installation Instructions, you're ready to proceed with running tests, especially in the localhost environment.
 
+```bash
+npm test
+```
+
 During the testing phase, the application undergoes a form of "unit/integration testing" that focuses on the users module. This comprehensive process evaluates the functional requirements of tasks like login, signup... etc, verifying the smooth and accurate execution of these functionalities.
 

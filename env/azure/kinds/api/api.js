@@ -36,8 +36,8 @@ const APIService = {
                         publisherName: 'Admin',
                         location: azure.env.settings.location,
                         sku: {
-                            name: 'Developer',
-                            capacity: 1
+                            name: 'Consumption',
+                            capacity: 0
                         }
                     }
                     console.log('Creating API Management Service ... - It will take some time')

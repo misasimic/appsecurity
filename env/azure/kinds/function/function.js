@@ -171,7 +171,7 @@ async function deployService (in_meta) {
                 )
                 if (deployFnR.code === 0) {
                     console.log('service: ' + in_meta.name + ' => deployed successfully')
-                    api.registerServiceApp(in_meta)
+                    await api.registerServiceApp(in_meta)
                 } else {
                     console.log('ERORROR DEPLOY SERVICE: ', deployFnR)
                     throw new Error('ERORROR ZipDeploy!')
