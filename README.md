@@ -21,7 +21,7 @@ The login page provides options for both signing up and recovering a forgotten p
 
 * [Architecture - General Guide](./documentation/1-Architecture.md)
 
-* [Demo App Architecture](./documentation/1-Architecture.md)
+* [Demo App Architecture](./documentation/2-demoapp-architecture.md)
 
 ## Installation instructions
 

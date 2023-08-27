@@ -95,8 +95,6 @@ async function get_user_from_token (token) {
     return result
 }
 
-// get_user_from_token('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pc2Euc2ltaWNAZ21haWwuY29tIiwiaWF0IjoxNjkyODc1ODE1LCJleHAiOjE2OTMxMzUwMTV9.AwNCXCsYNc9s8suFOwqRbyiLGkgMt9RUTZ6TDU74u1s')
-
 module.exports = {
     sign_up,
     login_jwt,
